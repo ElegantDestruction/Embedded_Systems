@@ -43,7 +43,7 @@ uint8_t DATALOG_SD_Log_Enable(void);
 void DATALOG_SD_Log_Disable(void);
 void DATALOG_SD_NewLine(void);
 void RTC_Handler( RTC_HandleTypeDef *RtcHandle );
-void Accelero_Sensor_Handler( void *handle );
+void Accelero_Sensor_Handler( void *handle, uint32_t msTick, uint32_t *msTickStateChange, uint8_t *state );
 void Gyro_Sensor_Handler( void *handle );
 void Magneto_Sensor_Handler( void *handle );
 void Temperature_Sensor_Handler( void *handle );

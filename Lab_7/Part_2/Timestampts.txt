@@ -10,3 +10,5 @@ delta3-2: .09s
 delta4-3: .10s
 delta5-4: .11s
 delta6-5: .09s
+
+Averagedelta: .10s
