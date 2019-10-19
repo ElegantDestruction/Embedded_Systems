@@ -1,0 +1,14 @@
+Timestamp 1: 26.62s
+Timestamp 2: 26.73s
+Timestamp 3: 26.82s
+Timestamp 4: 26.92s
+Timestamp 5: 27.03s
+Timestamp 6: 27.12s
+
+delta2-1: .11s
+delta3-2: .09s
+delta4-3: .10s
+delta5-4: .11s
+delta6-5: .09s
+
+Averagedelta: .10s
