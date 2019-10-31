@@ -58,7 +58,7 @@
 /*************** Debug Defines ******************/
 /* Enable printf over USB Virtual COM Port */
 /* Enabling this define for SensorTile will introduce a 10 Seconds delay */
-//#define ENABLE_USB_DEBUG
+#define ENABLE_USB_DEBUG
 
 /* For enabling connection and notification subscriptions debug */
 #define ENABLE_USB_DEBUG_CONNECTION

@@ -49,6 +49,14 @@
 #define AUDIO_IN_BUF_LEN   (AUDIO_CHANNELS*AUDIO_SAMPLING_FREQUENCY/1000)
 #define AUDIO_OUT_BUF_LEN  (AUDIO_IN_BUF_LEN*8)
 
+/* Define for DSP -- IIR Filter start ----------------------------------------*/
+#define F0 3000
+#define HIGH_PASS_FILTER 0
+#define LOW_PASS_FILTER 1
+#define NO_FILTER 2
+#define GAIN 1024
+/* Define for DSP -- IIR Filter end ------------------------------------------*/
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 
@@ -113,10 +121,43 @@ void AudioProcess(void)
   static uint32_t AudioOutActive = 0;
   uint32_t indexIn;
   
-  for(indexIn=0;indexIn<AUDIO_IN_BUF_LEN;indexIn++)
-  {
-    audio_out_buffer[IndexOut++] = PCM_Buffer[indexIn];
-    audio_out_buffer[IndexOut++] = PCM_Buffer[indexIn];
+  /* IIR filter setup */
+  int16_t filter_type = HIGH_PASS_FILTER;
+  int16_t IWon;
+  int16_t c[3];
+  int16_t prev_in, cur_in;
+  int32_t new_out;
+
+  IWon = (int) AUDIO_SAMPLING_FREQUENCY / (3.14159 * F0);
+  if (filter_type == LOW_PASS_FILTER) {
+	  c[0] = GAIN / (1.0f + IWon);
+	  c[1] = c[0];
+	  c[2] = c[0] * (1.0f - IWon);
+  }
+  else if (filter_type == HIGH_PASS_FILTER) {
+	  c[0] = GAIN - (GAIN / (1.0f + IWon));
+	  c[1] = -c[0];
+	  c[2] = (1.0f / (1.0f + IWon)) * (GAIN - IWon * GAIN);
+  }
+  else if (filter_type == NO_FILTER){
+	  c[0] = GAIN;
+	  c[1] = 0;
+	  c[2] = 0;
+  }
+  /* IIR filter setup end */
+
+  for(indexIn=0;indexIn<AUDIO_IN_BUF_LEN;indexIn++) {
+	  if (indexIn == 0) {
+		audio_out_buffer[IndexOut++] = PCM_Buffer[indexIn];
+		audio_out_buffer[IndexOut++] = PCM_Buffer[indexIn];
+	  }
+	  else {
+		  cur_in = PCM_Buffer[indexIn];
+		  new_out = cur_in * c[0] + prev_in * c[1] - audio_out_buffer[IndexOut - 2] * c[2];
+		  audio_out_buffer[IndexOut++] = new_out / GAIN;
+		  audio_out_buffer[IndexOut++] = new_out / GAIN;
+		  prev_in = cur_in;
+	  }
   }
   
   if(!AudioOutActive && IndexOut==AUDIO_OUT_BUF_LEN/2)
