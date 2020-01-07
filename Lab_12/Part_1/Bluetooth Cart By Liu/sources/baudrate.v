@@ -1,0 +1,72 @@
+
+//The baudrate module is to generate the sampling ticks for the UART receiver
+//which run on 9600 bps
+
+
+module baudrate(clk, baud8clk);
+
+	// Input Port(s)
+	
+	input clk;
+	
+	// Output Port(s)
+	
+	output baud8clk;
+
+	
+	// divvalue not important here; will be overriden on top module
+    parameter	divvalue = 5 ;  
+    reg		[26:0]	cnt;
+    reg     divcout;
+	 
+   
+   //Create a baudrate counter using a rising edge of the clk signal 
+	//The counter value (cnt) was reset to zero when the divvalue is zero
+   //Otherwise increment 1 to the counter value 'cnt' 	
+	always @(posedge clk)
+	begin
+		if (cnt == divvalue-1)
+			cnt <= 0;
+		else
+			cnt <= cnt + 1;
+	end
+	
+	 
+	 //Create the baud rate sampling ticks at every rising edge of
+	 // cnt value from the baud rate counter;
+	 // name the output divcout
+    always @(cnt)
+	 begin
+		if (cnt == divvalue-1)
+			divcout = 1;
+		else
+			divcout = 0;
+	end
+	
+	reg baud8clk;
+    
+	 
+	 //At every rising edge of clk, invert each sample ticks using
+	 // the xor function; name baud8clk as the parameter for the output
+	 always@(posedge clk)
+    begin
+	    baud8clk = baud8clk ^ divcout;
+    end
+
+
+//	 always@(posedge clk)
+//    begin
+//	    baud8clk = baud8clk;
+//    end
+
+   reg [2:0] temp;
+    
+	
+endmodule
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Tue Nov 12 14:22:24 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : BT_PWM
+Top-level Entity Name : BT_PWM
+Family : MAX 10
+Total logic elements : 201
+    Total combinational functions : 184
+    Dedicated logic registers : 124
+Total registers : 124
+Total pins : 13
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

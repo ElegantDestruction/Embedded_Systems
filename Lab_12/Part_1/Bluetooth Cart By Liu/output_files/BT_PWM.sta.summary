@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -3.404
+TNS   : -84.582
+
+Type  : Slow 1200mV 85C Model Setup 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : -2.153
+TNS   : -47.568
+
+Type  : Slow 1200mV 85C Model Setup 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : -1.190
+TNS   : -14.615
+
+Type  : Slow 1200mV 85C Model Hold 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : 0.331
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.547
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : 0.552
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -77.542
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : -1.222
+TNS   : -39.104
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : -1.222
+TNS   : -37.882
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.030
+TNS   : -71.152
+
+Type  : Slow 1200mV 0C Model Setup 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : -1.874
+TNS   : -40.084
+
+Type  : Slow 1200mV 0C Model Setup 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : -1.013
+TNS   : -11.087
+
+Type  : Slow 1200mV 0C Model Hold 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.506
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -77.542
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : -1.222
+TNS   : -39.104
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : -1.222
+TNS   : -37.882
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.205
+TNS   : -11.303
+
+Type  : Fast 1200mV 0C Model Setup 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : -0.491
+TNS   : -7.083
+
+Type  : Fast 1200mV 0C Model Setup 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : -0.022
+TNS   : -0.066
+
+Type  : Fast 1200mV 0C Model Hold 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.248
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : 0.250
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -66.076
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'motor_pwm_v:inst2|divider_v:inst1|cnt2'
+Slack : -1.000
+TNS   : -32.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'uart_RX:inst0|baudrate:b2v_inst|baud8clk'
+Slack : -1.000
+TNS   : -31.000
+
+------------------------------------------------------------

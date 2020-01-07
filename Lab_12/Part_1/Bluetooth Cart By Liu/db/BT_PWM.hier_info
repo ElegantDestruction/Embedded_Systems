@@ -1,0 +1,416 @@
+|BT_PWM
+CLOCK_50 => CLOCK_50.IN2
+reset_n => reset_n.IN2
+RX => RX.IN1
+LED[0] << LED[0].DB_MAX_OUTPUT_PORT_TYPE
+LED[1] << LED[1].DB_MAX_OUTPUT_PORT_TYPE
+LED[2] << LED[2].DB_MAX_OUTPUT_PORT_TYPE
+LED[3] << LED[3].DB_MAX_OUTPUT_PORT_TYPE
+LED[4] << LED[4].DB_MAX_OUTPUT_PORT_TYPE
+LED[5] << LED[5].DB_MAX_OUTPUT_PORT_TYPE
+LED[6] << LED[6].DB_MAX_OUTPUT_PORT_TYPE
+LED[7] << LED[7].DB_MAX_OUTPUT_PORT_TYPE
+pwm_out_left << motor_pwm_v:inst2.pwm_out_left
+pwm_out_right << motor_pwm_v:inst2.pwm_out_right
+
+
+|BT_PWM|uart_RX:inst0
+clk => clk.IN1
+rdata => rdata.IN1
+rst => rst.IN1
+R_out[0] <= LOAD_R:b2v_inst3.R_out
+R_out[1] <= LOAD_R:b2v_inst3.R_out
+R_out[2] <= LOAD_R:b2v_inst3.R_out
+R_out[3] <= LOAD_R:b2v_inst3.R_out
+R_out[4] <= LOAD_R:b2v_inst3.R_out
+R_out[5] <= LOAD_R:b2v_inst3.R_out
+R_out[6] <= LOAD_R:b2v_inst3.R_out
+R_out[7] <= LOAD_R:b2v_inst3.R_out
+rdready <= rdready.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|uart_RX:inst0|baudrate:b2v_inst
+clk => baud8clk~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
+clk => cnt[15].CLK
+clk => cnt[16].CLK
+clk => cnt[17].CLK
+clk => cnt[18].CLK
+clk => cnt[19].CLK
+clk => cnt[20].CLK
+clk => cnt[21].CLK
+clk => cnt[22].CLK
+clk => cnt[23].CLK
+clk => cnt[24].CLK
+clk => cnt[25].CLK
+clk => cnt[26].CLK
+baud8clk <= baud8clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2
+clk => clk.IN5
+rst => rst.IN2
+uartdata => uartdata.IN1
+uartredone <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+uartredata[0] <= palshiftreg:inst.Q
+uartredata[1] <= palshiftreg:inst.Q
+uartredata[2] <= palshiftreg:inst.Q
+uartredata[3] <= palshiftreg:inst.Q
+uartredata[4] <= palshiftreg:inst.Q
+uartredata[5] <= palshiftreg:inst.Q
+uartredata[6] <= palshiftreg:inst.Q
+uartredata[7] <= palshiftreg:inst.Q
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|palshiftreg:inst
+clrn => Q[0]~reg0.ACLR
+clrn => Q[1]~reg0.ACLR
+clrn => Q[2]~reg0.ACLR
+clrn => Q[3]~reg0.ACLR
+clrn => Q[4]~reg0.ACLR
+clrn => Q[5]~reg0.ACLR
+clrn => Q[6]~reg0.ACLR
+clrn => Q[7]~reg0.ACLR
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+clk => Q[4]~reg0.CLK
+clk => Q[5]~reg0.CLK
+clk => Q[6]~reg0.CLK
+clk => Q[7]~reg0.CLK
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Ldn => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Sh => Q.OUTPUTSELECT
+Di => Q.DATAB
+D[0] => Q.DATAB
+D[1] => Q.DATAB
+D[2] => Q.DATAB
+D[3] => Q.DATAB
+D[4] => Q.DATAB
+D[5] => Q.DATAB
+D[6] => Q.DATAB
+D[7] => Q.DATAB
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|restate:inst1
+clk => state~1.DATAIN
+rst => state~3.DATAIN
+redata => Selector0.IN4
+redata => rstbitcount.DATAB
+redata => next_state.DATAB
+redata => Selector1.IN1
+redata => next_state.DATAB
+clkcount[0] => Equal0.IN2
+clkcount[0] => Equal1.IN2
+clkcount[1] => Equal0.IN1
+clkcount[1] => Equal1.IN1
+clkcount[2] => Equal0.IN0
+clkcount[2] => Equal1.IN0
+bitcount[0] => Equal2.IN31
+bitcount[1] => Equal2.IN30
+bitcount[2] => Equal2.IN29
+bitcount[3] => Equal2.IN0
+clkcountEN <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+shEN <= bitcountEN.DB_MAX_OUTPUT_PORT_TYPE
+bitcountEN <= bitcountEN.DB_MAX_OUTPUT_PORT_TYPE
+rstbitcount <= rstbitcount.DB_MAX_OUTPUT_PORT_TYPE
+redone <= redone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|lpm_counter:inst2
+clock => cntr_dli:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => cntr_dli:auto_generated.cnt_en
+updown => ~NO_FANOUT~
+aclr => cntr_dli:auto_generated.aclr
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => cntr_dli:auto_generated.sclr
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_dli:auto_generated.q[0]
+q[1] <= cntr_dli:auto_generated.q[1]
+q[2] <= cntr_dli:auto_generated.q[2]
+q[3] <= cntr_dli:auto_generated.q[3]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|lpm_counter:inst2|cntr_dli:auto_generated
+aclr => counter_reg_bit[3].IN0
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+cnt_en => _.IN1
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN0
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|lpm_shiftreg:inst3
+data[0] => _.IN1
+data[1] => _.IN1
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+load => _.IN0
+aclr => dffs[1].IN0
+aset => _.IN0
+sclr => _.IN0
+sset => _.IN0
+sset => _.IN0
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|lpm_counter:inst4
+clock => cntr_l0i:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => cntr_l0i:auto_generated.aclr
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => cntr_l0i:auto_generated.sclr
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_l0i:auto_generated.q[0]
+q[1] <= cntr_l0i:auto_generated.q[1]
+q[2] <= cntr_l0i:auto_generated.q[2]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|BT_PWM|uart_RX:inst0|urev:b2v_inst2|lpm_counter:inst4|cntr_l0i:auto_generated
+aclr => counter_reg_bit[2].IN0
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN0
+
+
+|BT_PWM|uart_RX:inst0|LOAD_R:b2v_inst3
+clk => R_out[0]~reg0.CLK
+clk => R_out[1]~reg0.CLK
+clk => R_out[2]~reg0.CLK
+clk => R_out[3]~reg0.CLK
+clk => R_out[4]~reg0.CLK
+clk => R_out[5]~reg0.CLK
+clk => R_out[6]~reg0.CLK
+clk => R_out[7]~reg0.CLK
+RDR[0] => R_out[0]~reg0.DATAIN
+RDR[1] => R_out[1]~reg0.DATAIN
+RDR[2] => R_out[2]~reg0.DATAIN
+RDR[3] => R_out[3]~reg0.DATAIN
+RDR[4] => R_out[4]~reg0.DATAIN
+RDR[5] => R_out[5]~reg0.DATAIN
+RDR[6] => R_out[6]~reg0.DATAIN
+RDR[7] => R_out[7]~reg0.DATAIN
+R_out[0] <= R_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[1] <= R_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[2] <= R_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[3] <= R_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[4] <= R_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[5] <= R_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[6] <= R_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+R_out[7] <= R_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ready_data => R_out[0]~reg0.ENA
+ready_data => R_out[1]~reg0.ENA
+ready_data => R_out[2]~reg0.ENA
+ready_data => R_out[3]~reg0.ENA
+ready_data => R_out[4]~reg0.ENA
+ready_data => R_out[5]~reg0.ENA
+ready_data => R_out[6]~reg0.ENA
+ready_data => R_out[7]~reg0.ENA
+
+
+|BT_PWM|action_code:inst1
+ASCII_code[0] => Decoder0.IN7
+ASCII_code[1] => Decoder0.IN6
+ASCII_code[2] => Decoder0.IN5
+ASCII_code[3] => Decoder0.IN4
+ASCII_code[4] => Decoder0.IN3
+ASCII_code[5] => Decoder0.IN2
+ASCII_code[6] => Decoder0.IN1
+ASCII_code[7] => Decoder0.IN0
+action[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+action[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+action[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+action[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|motor_pwm_v:inst2
+reset_n => reset_n.IN1
+clk => clk.IN1
+SW[0] => Decoder0.IN3
+SW[1] => Decoder0.IN2
+SW[2] => Decoder0.IN1
+SW[3] => Decoder0.IN0
+pwm_out_left <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+pwm_out_right <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BT_PWM|motor_pwm_v:inst2|divider_v:inst1
+reset_n => cnt1[0].ACLR
+reset_n => cnt1[1].ACLR
+reset_n => cnt1[2].ACLR
+reset_n => cnt1[3].ACLR
+reset_n => cnt1[4].ACLR
+reset_n => cnt1[5].ACLR
+reset_n => cnt1[6].ACLR
+reset_n => cnt1[7].ACLR
+reset_n => cnt1[8].ACLR
+reset_n => cnt1[9].ACLR
+reset_n => cnt1[10].ACLR
+reset_n => cnt1[11].ACLR
+reset_n => cnt1[12].ACLR
+reset_n => cnt1[13].ACLR
+reset_n => cnt1[14].ACLR
+reset_n => cnt1[15].ACLR
+reset_n => cnt1[16].ACLR
+reset_n => cnt1[17].ACLR
+reset_n => cnt1[18].ACLR
+reset_n => cnt1[19].ACLR
+reset_n => cnt1[20].ACLR
+reset_n => cnt1[21].ACLR
+reset_n => cnt1[22].ACLR
+reset_n => cnt1[23].ACLR
+reset_n => cnt1[24].ACLR
+reset_n => cnt1[25].ACLR
+reset_n => cnt1[26].ACLR
+reset_n => cnt1[27].ACLR
+reset_n => cnt1[28].ACLR
+reset_n => cnt1[29].ACLR
+reset_n => cnt1[30].ACLR
+reset_n => cnt1[31].ACLR
+reset_n => cnt2.ACLR
+clk => cnt2.CLK
+clk => cnt1[0].CLK
+clk => cnt1[1].CLK
+clk => cnt1[2].CLK
+clk => cnt1[3].CLK
+clk => cnt1[4].CLK
+clk => cnt1[5].CLK
+clk => cnt1[6].CLK
+clk => cnt1[7].CLK
+clk => cnt1[8].CLK
+clk => cnt1[9].CLK
+clk => cnt1[10].CLK
+clk => cnt1[11].CLK
+clk => cnt1[12].CLK
+clk => cnt1[13].CLK
+clk => cnt1[14].CLK
+clk => cnt1[15].CLK
+clk => cnt1[16].CLK
+clk => cnt1[17].CLK
+clk => cnt1[18].CLK
+clk => cnt1[19].CLK
+clk => cnt1[20].CLK
+clk => cnt1[21].CLK
+clk => cnt1[22].CLK
+clk => cnt1[23].CLK
+clk => cnt1[24].CLK
+clk => cnt1[25].CLK
+clk => cnt1[26].CLK
+clk => cnt1[27].CLK
+clk => cnt1[28].CLK
+clk => cnt1[29].CLK
+clk => cnt1[30].CLK
+clk => cnt1[31].CLK
+clk_out <= cnt2.DB_MAX_OUTPUT_PORT_TYPE
+
+

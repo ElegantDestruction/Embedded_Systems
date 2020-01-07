@@ -1,0 +1,8 @@
+
+State Machine - |BT_PWM|uart_RX:inst0|urev:b2v_inst2|restate:inst1|state
+Name state.r_STOP state.r_SAMPLE state.r_WAIT state.r_CENTER state.r_START 
+state.r_START 0 0 0 0 0 
+state.r_CENTER 0 0 0 1 1 
+state.r_WAIT 0 0 1 0 1 
+state.r_SAMPLE 0 1 0 0 1 
+state.r_STOP 1 0 0 0 1 

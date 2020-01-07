@@ -1,0 +1,87 @@
+|traffic_light_top
+clk => clk.IN1
+btn1 => ~NO_FANOUT~
+btn2 => clr.IN2
+led[0] <= Traffic_controller:U2.lights
+led[1] <= Traffic_controller:U2.lights
+led[2] <= Traffic_controller:U2.lights
+led[3] <= Traffic_controller:U2.lights
+led[4] <= Traffic_controller:U2.lights
+led[5] <= Traffic_controller:U2.lights
+
+
+|traffic_light_top|clkdiv:U1
+clk => q[0].CLK
+clk => q[1].CLK
+clk => q[2].CLK
+clk => q[3].CLK
+clk => q[4].CLK
+clk => q[5].CLK
+clk => q[6].CLK
+clk => q[7].CLK
+clk => q[8].CLK
+clk => q[9].CLK
+clk => q[10].CLK
+clk => q[11].CLK
+clk => q[12].CLK
+clk => q[13].CLK
+clk => q[14].CLK
+clk => q[15].CLK
+clk => q[16].CLK
+clk => q[17].CLK
+clk => q[18].CLK
+clk => q[19].CLK
+clk => q[20].CLK
+clk => q[21].CLK
+clk => q[22].CLK
+clk => q[23].CLK
+clk => q[24].CLK
+clk => q[25].CLK
+clr => q[0].ACLR
+clr => q[1].ACLR
+clr => q[2].ACLR
+clr => q[3].ACLR
+clr => q[4].ACLR
+clr => q[5].ACLR
+clr => q[6].ACLR
+clr => q[7].ACLR
+clr => q[8].ACLR
+clr => q[9].ACLR
+clr => q[10].ACLR
+clr => q[11].ACLR
+clr => q[12].ACLR
+clr => q[13].ACLR
+clr => q[14].ACLR
+clr => q[15].ACLR
+clr => q[16].ACLR
+clr => q[17].ACLR
+clr => q[18].ACLR
+clr => q[19].ACLR
+clr => q[20].ACLR
+clr => q[21].ACLR
+clr => q[22].ACLR
+clr => q[23].ACLR
+clr => q[24].ACLR
+clr => q[25].ACLR
+clk3 <= q[22].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|traffic_light_top|Traffic_controller:U2
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => state~1.DATAIN
+clr => count[0].ACLR
+clr => count[1].ACLR
+clr => count[2].ACLR
+clr => count[3].ACLR
+clr => state~3.DATAIN
+lights[0] <= lights[0].DB_MAX_OUTPUT_PORT_TYPE
+lights[1] <= lights[1].DB_MAX_OUTPUT_PORT_TYPE
+lights[2] <= lights.DB_MAX_OUTPUT_PORT_TYPE
+lights[3] <= lights[3].DB_MAX_OUTPUT_PORT_TYPE
+lights[4] <= lights[4].DB_MAX_OUTPUT_PORT_TYPE
+lights[5] <= lights.DB_MAX_OUTPUT_PORT_TYPE
+
+
